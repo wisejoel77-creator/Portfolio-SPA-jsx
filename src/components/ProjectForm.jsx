@@ -10,10 +10,10 @@ function ProjectForm() {
                 alert('Project submitted!');
             }}>
                 <label htmlFor="title">Project Title:</label>
-                <input type="text" id="title" name="title" required />
+                <input type="text" id="title" name="title" required placeholder="Enter project title here" />
 
                 <label htmlFor="description">Project Description:</label>
-                <textarea id="description" name="description" required></textarea>
+                <textarea id="description" name="description" required placeholder="Enter project description here"></textarea>
 
                 <button type="submit">Submit</button>
             </form>

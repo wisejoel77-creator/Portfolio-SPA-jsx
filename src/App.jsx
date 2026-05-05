@@ -13,8 +13,7 @@ function App() {
 
     return (
         <div className="app">
-          <Header />
-            <h1>Project Management App</h1>
+            <Header />
             <ProjectForm />
             <ProjectList />
             <ProjectCard />
