@@ -8,10 +8,17 @@ import './App.css'
 
 //A function containing the main component of the app.
 function App() {
-    const [projects, setProjects] = useState([])
+    const [projects, setProjects] = useState([
 
+        { id: 1, title: 'Project 1', description: 'An uber app for ride sharing.' },
+        { id: 2, title: 'Project 2', description: 'A social media app for connecting people.' },
+        { id: 3, title: 'Project 3', description: 'A e-commerce app for selling products online.' }
+    ])
+
+   
     const addProject = (project) => {
-        setProjects(prev => [...prev, project])
+        setProjects(prev => [...prev,
+          {id: Date.now(), ...project}])
     }
 
     const deleteProject = (id) => {

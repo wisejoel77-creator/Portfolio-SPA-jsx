@@ -5,15 +5,22 @@ import { useState } from 'react'
 function ProjectForm({ onAddProject }) {
     const [title, setTitle] = useState('')
     const [description, setDescription] = useState('')
+    const[successMessage, setSuccessMessage] = useState('')
 
     const handleSubmit = (e) => {
         e.preventDefault()
         onAddProject({ title, description })
         setTitle('')
         setDescription('')
+        setSuccessMessage('Project submitted successfully!')
+
+        setTimeout(() => {
+            setSuccessMessage('')
+        }, 3000)
     }
     return (
         <div className="project-form">
+            {successMessage && <p className="success">{successMessage}</p>}
             <h2>Submit a New Project</h2>
             <form className="project-form" onSubmit={handleSubmit}>
                 
