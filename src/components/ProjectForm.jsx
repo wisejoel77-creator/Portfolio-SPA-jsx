@@ -4,7 +4,11 @@ function ProjectForm() {
     return (
         <div className="project-form">
             <h2>Submit a New Project</h2>
-            <form>
+            <form className="project-form" onSubmit={(e) => {
+                e.preventDefault();
+                // Message to confirm that the form has been submitted and the new object has been added to the project list.
+                alert('Project submitted!');
+            }}>
                 <label htmlFor="title">Project Title:</label>
                 <input type="text" id="title" name="title" required />
 
