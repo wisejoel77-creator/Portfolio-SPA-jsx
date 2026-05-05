@@ -1,13 +1,13 @@
 //projectList.jsx
+import ProjectCard from './ProjectCard'
 //A function containing the project list component of the app.
 
-import ProjectCard from './ProjectCard'
-function ProjectList({ projects }) {
+function ProjectList({ projects, onDeleteProject }) {
     return (
         <div className="project-list">
             <h2>Project List</h2>
-            {projects.map((project, index) => (
-                <ProjectCard key={index} project={project} />
+            {projects.map((project, id) => (
+                <ProjectCard key={project.id} project={project} onDeleteProject={onDeleteProject}/>
             ))}
         </div>
     )

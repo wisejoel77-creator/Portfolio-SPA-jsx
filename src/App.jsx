@@ -14,11 +14,15 @@ function App() {
         setProjects(prev => [...prev, project])
     }
 
+    const deleteProject = (id) => {
+        setProjects(prev => prev.filter(project => project.id !== id))
+    }
+
     return (
         <div className="app">
             <Header />
             <ProjectForm onAddProject={addProject} />
-            <ProjectList projects={projects} />
+            <ProjectList projects={projects} onDeleteProject={deleteProject} />
             
         </div>
     )
