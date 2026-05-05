@@ -1,20 +1,31 @@
 //ProjectForm.jsx
+import { useState } from 'react'
 //A function containing the form component of the app.
-function ProjectForm() {
+
+function ProjectForm({ onAddProject }) {
+    const [title, setTitle] = useState('')
+    const [description, setDescription] = useState('')
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        onAddProject({ title, description })
+        setTitle('')
+        setDescription('')
+    }
     return (
         <div className="project-form">
             <h2>Submit a New Project</h2>
-            <form className="project-form" onSubmit={(e) => {
-                e.preventDefault();
-                // Message to confirm that the form has been submitted and the new object has been added to the project list.
-                alert('Project submitted!');
-            }}>
+            <form className="project-form" onSubmit={handleSubmit}>
+                
+
+                {/* Form fields for project title and description, with placeholders to guide the user. */}
                 <label htmlFor="title">Project Title:</label>
-                <input type="text" id="title" name="title" required placeholder="Enter project title here" />
+                <input type="text" id="title" name="title" value={title} onChange={(e) => setTitle(e.target.value)} required placeholder="Enter project title here" />
 
                 <label htmlFor="description">Project Description:</label>
-                <textarea id="description" name="description" required placeholder="Enter project description here"></textarea>
+                <textarea id="description" name="description" value={description} onChange={(e) => setDescription(e.target.value)} required placeholder="Enter project description here"></textarea>
 
+{/* Submit button to submit the form. */}
                 <button type="submit">Submit</button>
             </form>
         </div>

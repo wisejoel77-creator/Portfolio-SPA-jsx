@@ -1,12 +1,12 @@
-//ProjectData.jsx
-//A function containing the project data component of the app.
-function ProjectData() {
+//ProjectCard.jsx
+//A function containing the project card component of the app.
+function ProjectCard({ project }) {
     return (
-        <div className="project-data">
-            <h2>Project Data</h2>
-            <p>This is where the project data would be displayed.</p>
+        <div className="project-card">
+            <h3>{project.title}</h3>
+            <p>{project.description}</p>
         </div>
     )
 }
 
-export default ProjectData
+export default ProjectCard
